@@ -23,12 +23,31 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    return <input onChange={this.handleInputChange} onKeyPress={this.handleKeyPress} />;
+    return (
+      <div style={SearchBar.styles.div}>
+        <h3>Search for an Artist</h3>
+        <input
+          onChange={this.handleInputChange}
+          onKeyPress={this.handleKeyPress}
+          style={SearchBar.styles.input}
+        />
+      </div>
+    );
   }
 }
 
 SearchBar.propTypes = {
   getAlbums: React.PropTypes.func.isRequired,
+};
+
+SearchBar.styles = {
+  div: {
+    margin: 30,
+    textAlign: 'center',
+  },
+  input: {
+    width: '60%',
+  },
 };
 
 export default SearchBar;
